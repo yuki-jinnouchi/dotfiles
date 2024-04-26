@@ -1,5 +1,7 @@
 #!/bin/sh
 
+zsh
+
 # define the dotfiles
 zsh_dotfiles=(
 	.zshenv
@@ -9,6 +11,8 @@ zsh_dotfiles=(
 for file in "${zsh_dotfiles[@]}"; do
 	ln -svf ~/dotfiles/.zsh/$file ~
 done
+
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # set .vim
 ln -svf ~/dotfiles/.vim/.vimrc ~
