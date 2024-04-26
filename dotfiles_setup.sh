@@ -13,13 +13,13 @@ done
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 # set .vim
-ln -svf ~/dotfiles/.vim/.vimrc ~
-ln -svf ~/dotfiles/.vim/.gvimrc ~
-mkdir ~/.vim
-mkdir ~/.vim/colors
-ln -svf ~/dotfiles/.vim/colors/iceburg.vim ~/.vim/colors
+ln -svf $HOME/dotfiles/.vim/.vimrc $HOME
+ln -svf $HOME/dotfiles/.vim/.gvimrc $HOME
+mkdir $HOME/.vim
+mkdir $HOME/.vim/colors
+ln -svf $HOME/dotfiles/.vim/colors/iceburg.vim ~/.vim/colors
 
 # set atcoder-tools
-mkdir ~/.atcoder-tools
-ln -svf ~/dotfiles/.atcoder-tools/.atcodertools.toml ~/.atcoder-tools
-ln -svf ~/dotfiles/.atcoder-tools/my_template.cpp ~/.atcoder-tools
+mkdir $HOME/.atcoder-tools
+ln -svf $HOME/dotfiles/.atcoder-tools/.atcodertools.toml $HOME/.atcoder-tools
+ln -svf $HOME/dotfiles/.atcoder-tools/my_template.cpp $HOME/.atcoder-tools
