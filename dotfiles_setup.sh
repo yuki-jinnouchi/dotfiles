@@ -1,7 +1,5 @@
 #!/bin/sh
 
-zsh
-
 # define the dotfiles
 zsh_dotfiles=(
 	.zshenv
