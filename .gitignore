@@ -1,0 +1,20 @@
+# Object files
+*.o
+
+# Libraries
+*.a
+
+# Executables
+*.out
+
+# on mac
+.DS_Store
+
+#project based
+.zsh_history
+.zprezto
+.bash_history
+.zcompcache
+.zcompdump
+.viminfo
+.emacs.d/history
