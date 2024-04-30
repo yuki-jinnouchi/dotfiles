@@ -21,5 +21,5 @@ ln -svf ~/dotfiles/vim/colors/iceburg.vim ~/.vim/colors
 
 # set atcoder-tools
 mkdir ~/.atcoder-tools
-ln -svf ~/dotfiles/atcoder-tools/.atcodertools.toml ~/.atcoder-tools
+ln -svf ~/dotfiles/atcoder-tools/.atcodertools.toml ~
 ln -svf ~/dotfiles/atcoder-tools/my_template.cpp ~/.atcoder-tools
