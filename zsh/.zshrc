@@ -59,3 +59,10 @@ source "${ZDOTDIR:-$HOME}/settings/history.sh"
 
 export EDITOR=vim
 setopt auto_param_keys
+# Added by LM Studio CLI tool (lms)
+export PATH="$PATH:/Users/jini/.cache/lm-studio/bin"
+
+source <(fzf --zsh)
+
+# set rbenv
+eval "$(rbenv init - zsh)"
