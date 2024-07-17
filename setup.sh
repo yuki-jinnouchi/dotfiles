@@ -4,6 +4,7 @@
 zsh_dotfiles=(
 	.zshenv
 	.zshrc
+	.zprofile
 )
 # make a symbolic link to the home directory
 for file in "${zsh_dotfiles[@]}"; do
