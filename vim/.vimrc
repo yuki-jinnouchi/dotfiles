@@ -15,6 +15,7 @@ set hidden
 set showcmd
 
 " 見た目系
+colorscheme iceberg
 " 行番号を表示
 set number
 " 現在の行を強調表示
@@ -63,9 +64,13 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
-colorscheme iceberg
-
 " ref: https://www.youtube.com/watch?v=2jJSNe4cHUM&t=270s
 inoremap <silent> jj <ESC>
+inoremap <silent> jk <ESC>
 nnoremap K 10k
 nnoremap J 10j
+
+" VimをOSのクリップボードと連携
+set clipboard&
+set clipboard^=unnamed
+set clipboard^=unnamedplus

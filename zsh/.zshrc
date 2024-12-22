@@ -53,8 +53,7 @@ unsetopt extended_history
 
 # set aliases
 source "${ZDOTDIR:-$HOME}/settings/alias.sh"
-
-# set aliases
+# set history
 source "${ZDOTDIR:-$HOME}/settings/history.sh"
 
 export EDITOR=vim
