@@ -74,3 +74,6 @@ nnoremap J 10j
 set clipboard&
 set clipboard^=unnamed
 set clipboard^=unnamedplus
+
+" Move between windows
+nnoremap <Return><Return> <c-w><c-w>
