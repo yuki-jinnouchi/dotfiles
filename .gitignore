@@ -11,10 +11,12 @@
 .DS_Store
 
 #project based
+#zsh
+.zprezto/
+.zsh_sessions/
 .zsh_history
-.zprezto
-.zsh_sessions
 .bash_history
+
 .zcompcache
 .zcompdump
 .viminfo

@@ -52,14 +52,14 @@ setopt magic_equal_subst
 unsetopt extended_history
 
 # set aliases
-source "${ZDOTDIR:-$HOME}/settings/alias.sh"
+source "$ZDOTDIR"/settings/alias.sh
 # set history
-source "${ZDOTDIR:-$HOME}/settings/history.sh"
+source "$ZDOTDIR"/settings/history.sh
 
 export EDITOR=vim
 setopt auto_param_keys
 # Added by LM Studio CLI tool (lms)
-export PATH="$PATH:/Users/jini/.cache/lm-studio/bin"
+export PATH="$PATH:~/.cache/lm-studio/bin"
 
 source <(fzf --zsh)
 

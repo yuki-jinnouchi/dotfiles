@@ -2,14 +2,14 @@
 indent_type='tab' # 'tab' or 'space'
 # indent_width=4
 template_file='~/.atcoder-tools/my_template.cpp'
-workspace_dir='~/Library/CloudStorage/Dropbox/procon/atcoder/contests'
+workspace_dir='~/Dropbox/procon/atcoder/contests'
 lang='cpp' # Check README.md for the supported languages.
 # code_generator_file="~/custom_code_generator.py"
 [postprocess]
 # exec_on_each_problem_dir='clang-format -i ./*.cpp'
 # exec_on_contest_dir='touch CMakeLists.txt'
 [compiler]
-compile_command='g++ -std=gnu++17 -Wall -Wextra -O2 -o ./a.out ./main.cpp'
+compile_command='g++ -std=gnu++17 -Wall -Wextra -O2 -o ./main ./main.cpp'
 # compile_only_when_diff_detected=true
 [tester]
 compile_before_testing=true

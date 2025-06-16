@@ -43,6 +43,7 @@ alias ..='c ../'
 # ref: https://qiita.com/taijuf212/items/57fccf4550ac6a983b8d
 
 alias g='git'
+compdef g=git
 alias gs='git status'
 alias gb='git branch'
 alias gc='git checkout'
@@ -50,7 +51,7 @@ alias gsw='git switch'
 alias gct='git commit'
 # alias gg='git grep'
 alias ga='git add'
-# alias gd='git diff'
+alias gd='git diff'
 # alias gl='git log'
 # alias gfo='git fetch origin'
 # alias gcm='git commit -m'
@@ -71,15 +72,15 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 setopt auto_cd
-hash -d proj=/Users/jini/Dropbox/42/dev/projects
-hash -d eval=/Users/jini/Dropbox/42/dev/evaluations
-hash -d proc=/Users/jini/Dropbox/procon
+hash -d proj=~/Dropbox/42/dev/projects
+hash -d eval=~/Dropbox/42/dev/evaluations
+hash -d proc=~/Dropbox/procon
 
 # -----------------------------
 
 # 42
-alias francinette=/Users/jini/francinette/tester.sh
-alias paco=/Users/jini/francinette/tester.sh
+alias francinette=~/francinette/tester.sh
+alias paco=~/francinette/tester.sh
 alias norm=norminette
 alias cdpj='cd ~proj'
 alias cdev='cd ~eval'
@@ -89,4 +90,4 @@ alias cdpc='cd ~proc'
 alias actools=atcoder-tools
 alias act=atcoder-tools
 
-alias ide='sh ~/dotfiles/tmux/ide.sh'
+alias ide='sh ~/dotfiles/common/tmux/ide.sh'
