@@ -14,7 +14,7 @@ fi
 typeset -U path PATH
 path=(
     $PATH
-    ~/.cargo/bin
+    # ~/.cargo/bin
     /opt/homebrew/bin(N-/)
     /opt/homebrew/sbin(N-/)
     /usr/bin
@@ -26,42 +26,59 @@ path=(
     /Library/Apple/usr/bin
 )
 
+# set personal brew for 42 Linux
+eval "$($HOME/.brew/bin/brew shellenv)" # [https://docs.brew.sh/Homebrew-on-Linux]
+# Load Homebrew config script [https://github.com/kube/42homebrew]
+source $HOME/.brewconfig.zsh
+
+# # set arch
+# # https://qiita.com/utict51/items/7ccbf81b8eb5f419a16a
+# if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
+#     [[ -x /usr/local/bin/brew ]] && alias brew="arch -arch x86_64 /usr/local/bin/brew"
+#     alias x64='exec arch -x86_64 /bin/zsh'
+#     alias a64='exec arch -arm64e /bin/zsh'
+#     switch-arch() {
+#         if  [[ "$(uname -m)" == arm64 ]]; then
+#             arch=x86_64
+#         elif [[ "$(uname -m)" == x86_64 ]]; then
+#             arch=arm64e
+#         fi
+#         exec arch -arch $arch /bin/zsh
+#     }
+# fi
+# setopt magic_equal_subst
+
 #set pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# set arch
-# https://qiita.com/utict51/items/7ccbf81b8eb5f419a16a
-if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
-    [[ -x /usr/local/bin/brew ]] && alias brew="arch -arch x86_64 /usr/local/bin/brew"
-    alias x64='exec arch -x86_64 /bin/zsh'
-    alias a64='exec arch -arm64e /bin/zsh'
-    switch-arch() {
-        if  [[ "$(uname -m)" == arm64 ]]; then
-            arch=x86_64
-        elif [[ "$(uname -m)" == x86_64 ]]; then
-            arch=arm64e
-        fi
-        exec arch -arch $arch /bin/zsh
-    }
-fi
-setopt magic_equal_subst
-
 # set simple history
 unsetopt extended_history
 
 # set aliases
-source "$ZDOTDIR"/settings/alias.sh
+source "${ZDOTDIR:-$HOME}/settings/alias.sh"
 # set history
-source "$ZDOTDIR"/settings/history.sh
+source "${ZDOTDIR:-$HOME}/settings/history.sh"
 
 export EDITOR=vim
 setopt auto_param_keys
-# Added by LM Studio CLI tool (lms)
-export PATH="$PATH:~/.cache/lm-studio/bin"
 
-source <(fzf --zsh)
+# MacOS specific settings
+if [[ "$(uname)" == "Darwin" ]]; then
+    # Added by LM Studio CLI tool (lms)
+    export PATH="$PATH:~/.cache/lm-studio/bin"
 
-# set rbenv
-eval "$(rbenv init - zsh)"
+    # set fzf
+    source <(fzf --zsh)
+
+    # set rbenv
+    eval "$(rbenv init - zsh)"
+fi
+
+# Linux specific settings
+if [[ "$(uname)" == "Linux" ]]; then
+    alias db="python ~/.dropbox-dist/dropbox.py"
+    alias db_run="source ~/.dropbox-dist/dropboxd"
+fi
+

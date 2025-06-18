@@ -12,4 +12,8 @@ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; t
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
+# init Rust environment in MacOS
+if [[ '$(uname -s)' == 'Darwin' ]]; then
 . "$HOME/.cargo/env"
+fi
+

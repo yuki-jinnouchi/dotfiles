@@ -78,16 +78,27 @@ hash -d proc=~/Dropbox/procon
 
 # -----------------------------
 
-# 42
-alias francinette=~/francinette/tester.sh
-alias paco=~/francinette/tester.sh
-alias norm=norminette
-alias cdpj='cd ~proj'
-alias cdev='cd ~eval'
-
 # procon
 alias cdpc='cd ~proc'
 alias actools=atcoder-tools
 alias act=atcoder-tools
 
-alias ide='sh ~/dotfiles/common/tmux/ide.sh'
+# MacOS specific settings
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias ide='sh ~/dotfiles/common/tmux/ide.sh'
+fi
+
+# Linux specific settings
+if [[ "$(uname)" == "Linux" ]]; then
+    # 42
+    alias francinette=~/francinette/tester.sh
+    alias paco=~/francinette/tester.sh
+    alias norm=norminette
+    alias cdpj='cd ~proj'
+    alias cdev='cd ~eval'
+
+    # Dropbox
+    alias db="python ~/.dropbox-dist/dropbox.py"
+    alias db_run="source ~/.dropbox-dist/dropboxd"
+fi
+
