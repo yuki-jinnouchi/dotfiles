@@ -26,11 +26,6 @@ path=(
     /Library/Apple/usr/bin
 )
 
-# set personal brew for 42 Linux
-eval "$($HOME/.brew/bin/brew shellenv)" # [https://docs.brew.sh/Homebrew-on-Linux]
-# Load Homebrew config script [https://github.com/kube/42homebrew]
-source $HOME/.brewconfig.zsh
-
 # # set arch
 # # https://qiita.com/utict51/items/7ccbf81b8eb5f419a16a
 # if (( $+commands[sw_vers] )) && (( $+commands[arch] )); then
@@ -80,5 +75,9 @@ fi
 if [[ "$(uname)" == "Linux" ]]; then
     alias db="python ~/.dropbox-dist/dropbox.py"
     alias db_run="source ~/.dropbox-dist/dropboxd"
-fi
 
+    # set personal brew for 42 Linux
+    eval "$($HOME/.brew/bin/brew shellenv)" # [https://docs.brew.sh/Homebrew-on-Linux]
+    # Load Homebrew config script [https://github.com/kube/42homebrew]
+    source $HOME/.brewconfig.zsh
+fi
